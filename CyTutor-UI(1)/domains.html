@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Domains - CyTutor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/app.css">
+</head>
+<body>
+  <div class="page-wrapper">
+  <canvas id="particles-bg"></canvas>
+
+  <header>
+    <div class="container">
+      <h1><a href="dashboard.html">CyTutor</a></h1>
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="challenges.html">Challenges</a>
+        <a href="domains.html" class="active">Learning Paths</a>
+        <a href="leaderboard.html">Leaderboard</a>
+      </nav>
+      <div class="header-right">
+        <div class="user-menu">
+          <div class="user-profile-toggle">
+            <div class="user-avatar">JD</div>
+            <span class="user-name">John Doe</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="dropdown-menu">
+            <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+            <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+            <a href="#" class="logout-btn" onclick="handleLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <h1 class="page-title">Learning Domains</h1>
+        <p class="page-description">Master cybersecurity through our comprehensive learning paths. Each domain is carefully crafted to take you from basics to advanced concepts.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="domains-grid">
+        <div class="card">
+          <div class="content">
+            <div class="back">
+              <div class="back-content">
+                <i class="fas fa-globe fa-3x"></i>
+                <strong>Web Security</strong>
+              </div>
+            </div>
+            <div class="front">
+              <div class="img">
+                <div class="circle"></div>
+                <div class="circle" id="right"></div>
+                <div class="circle" id="bottom"></div>
+              </div>
+              <div class="front-content">
+                <small class="badge">Web Security</small>
+                <div class="description">
+                  <div class="title">
+                    <p class="title">
+                      <strong>Web Security</strong>
+                    </p>
+                  </div>
+                  <p class="card-footer">
+                    24 Challenges | 4 Courses
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="content">
+            <div class="back">
+              <div class="back-content">
+                <i class="fas fa-lock fa-3x"></i>
+                <strong>Cryptography</strong>
+              </div>
+            </div>
+            <div class="front">
+              <div class="img">
+                <div class="circle"></div>
+                <div class="circle" id="right"></div>
+                <div class="circle" id="bottom"></div>
+              </div>
+              <div class="front-content">
+                <small class="badge">Cryptography</small>
+                <div class="description">
+                  <div class="title">
+                    <p class="title">
+                      <strong>Cryptography</strong>
+                    </p>
+                  </div>
+                  <p class="card-footer">
+                    18 Challenges | 3 Courses
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="content">
+            <div class="back">
+              <div class="back-content">
+                <i class="fas fa-microchip fa-3x"></i>
+                <strong>Reverse Engineering</strong>
+              </div>
+            </div>
+            <div class="front">
+              <div class="img">
+                <div class="circle"></div>
+                <div class="circle" id="right"></div>
+                <div class="circle" id="bottom"></div>
+              </div>
+              <div class="front-content">
+                <small class="badge">Reverse Engineering</small>
+                <div class="description">
+                  <div class="title">
+                    <p class="title">
+                      <strong>Reverse Engineering</strong>
+                    </p>
+                  </div>
+                  <p class="card-footer">
+                    16 Challenges | 3 Courses
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="content">
+            <div class="back">
+              <div class="back-content">
+                <i class="fas fa-search fa-3x"></i>
+                <strong>Digital Forensics</strong>
+              </div>
+            </div>
+            <div class="front">
+              <div class="img">
+                <div class="circle"></div>
+                <div class="circle" id="right"></div>
+                <div class="circle" id="bottom"></div>
+              </div>
+              <div class="front-content">
+                <small class="badge">Digital Forensics</small>
+                <div class="description">
+                  <div class="title">
+                    <p class="title">
+                      <strong>Digital Forensics</strong>
+                    </p>
+                  </div>
+                  <p class="card-footer">
+                    20 Challenges | 4 Courses
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="content">
+            <div class="back">
+              <div class="back-content">
+                <i class="fas fa-virus fa-3x"></i>
+                <strong>Malware Analysis</strong>
+              </div>
+            </div>
+            <div class="front">
+              <div class="img">
+                <div class="circle"></div>
+                <div class="circle" id="right"></div>
+                <div class="circle" id="bottom"></div>
+              </div>
+              <div class="front-content">
+                <small class="badge">Malware Analysis</small>
+                <div class="description">
+                  <div class="title">
+                    <p class="title">
+                      <strong>Malware Analysis</strong>
+                    </p>
+                  </div>
+                  <p class="card-footer">
+                    15 Challenges | 3 Courses
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="content">
+            <div class="back">
+              <div class="back-content">
+                <i class="fas fa-shield-alt fa-3x"></i>
+                <strong>Network Security</strong>
+              </div>
+            </div>
+            <div class="front">
+              <div class="img">
+                <div class="circle"></div>
+                <div class="circle" id="right"></div>
+                <div class="circle" id="bottom"></div>
+              </div>
+              <div class="front-content">
+                <small class="badge">Network Security</small>
+                <div class="description">
+                  <div class="title">
+                    <p class="title">
+                      <strong>Network Security</strong>
+                    </p>
+                  </div>
+                  <p class="card-footer">
+                    22 Challenges | 4 Courses
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="scripts/main.js"></script>
+  </div>
+</body>
+</html>

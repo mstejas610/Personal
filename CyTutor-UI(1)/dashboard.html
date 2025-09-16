@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - CyTutor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="styles/app.css">
+</head>
+<body>
+  <div class="page-wrapper">
+  <canvas id="particles-bg"></canvas>
+
+  <header>
+    <div class="container">
+      <h1><a href="dashboard.html">CyTutor</a></h1>
+      <nav>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="challenges.html">Challenges</a>
+        <a href="domains.html">Learning Paths</a>
+        <a href="leaderboard.html">Leaderboard</a>
+      </nav>
+      <div class="header-right">
+        <div class="user-menu">
+          <div class="user-profile-toggle">
+            <div class="user-avatar">JD</div>
+            <span class="user-name">John Doe</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="dropdown-menu">
+            <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+            <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+            <a href="#" class="logout-btn" onclick="handleLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <section class="welcome-section">
+      <div class="container">
+        <h1>Welcome back, CyberNinja <i class="fas fa-robot"></i></h1>
+        <p>Continue your journey in cybersecurity</p>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="domains-grid">
+        <div class="domain-card">
+          <div class="domain-icon"><i class="fas fa-key"></i></div>
+          <h3>Cryptography</h3>
+          <p>Master encryption, hashing, and secure communication protocols.</p>
+        </div>
+        <div class="domain-card">
+          <div class="domain-icon"><i class="fas fa-file-alt"></i></div>
+          <h3>Forensics</h3>
+          <p>Learn digital investigation and evidence analysis techniques.</p>
+        </div>
+        <div class="domain-card">
+          <div class="domain-icon"><i class="fas fa-bug"></i></div>
+          <h3>Malware</h3>
+          <p>Study malware analysis and reverse engineering.</p>
+        </div>
+        <div class="domain-card">
+          <div class="domain-icon"><i class="fas fa-code"></i></div>
+          <h3>Reverse Engineering</h3>
+          <p>Decode and understand compiled programs and binaries.</p>
+        </div>
+        <div class="domain-card">
+          <div class="domain-icon"><i class="fas fa-globe"></i></div>
+          <h3>Web Security</h3>
+          <p>Explore web vulnerabilities and secure coding practices.</p>
+        </div>
+        <div class="domain-card">
+          <div class="domain-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>VAPT</h3>
+          <p>Learn vulnerability assessment and penetration testing.</p>
+        </div>
+      </div>
+
+      <div class="progress-section">
+        <h2>Your Progress</h2>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+        <div class="progress-info">
+          <span>Level 5</span>
+          <span>3,250 XP / 5,000 XP</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="activity-section">
+      <div class="container">
+        <div class="activity-header">
+          <h2>Recent Activity</h2>
+          
+        </div>
+        <div class="activity-list">
+          <div class="activity-item">
+            <div class="activity-info">
+              <div class="activity-status status-solved"><i class="fas fa-check-circle"></i></div>
+              <span>SQL Injection Basics</span>
+            </div>
+            <span>+100 XP</span>
+          </div>
+          <div class="activity-item">
+            <div class="activity-info">
+              <div class="activity-status status-failed"><i class="fas fa-times-circle"></i></div>
+              <span>Advanced Buffer Overflow</span>
+            </div>
+            <span>Try Again</span>
+          </div>
+          <div class="activity-item">
+            <div class="activity-info">
+              <div class="activity-status status-progress"><i class="fas fa-clock"></i></div>
+              <span>Network Protocol Analysis</span>
+            </div>
+            <span>In Progress</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="scripts/main.js"></script>
+</div>
+</body>
+</html>

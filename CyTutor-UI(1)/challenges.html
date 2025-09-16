@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenges - CyTutor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/challenges.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="styles/app.css">
+</head>
+<body>
+  <div class="page-wrapper">
+  <canvas id="particles-bg"></canvas>
+
+  <header>
+    <div class="container">
+      <h1><a href="dashboard.html">CyTutor</a></h1>
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="challenges.html" class="active">Challenges</a>
+        <a href="domains.html">Learning Paths</a>
+        <a href="leaderboard.html">Leaderboard</a>
+      </nav>
+      <div class="header-right">
+        <div class="user-menu">
+          <div class="user-profile-toggle">
+            <div class="user-avatar">JD</div>
+            <span class="user-name">John Doe</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="dropdown-menu">
+            <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+            <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+            <a href="#" class="logout-btn" onclick="handleLogout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <h1 class="section-title">Challenges</h1>
+    
+    <div class="challenges-grid">
+      <div class="card">
+        <div class="content">
+          <div class="back">
+            <div class="back-content">
+              <span class="difficulty easy">Easy</span>
+              <a href="#" class="start-btn">START</a>
+            </div>
+          </div>
+          <div class="front">
+            <div class="img">
+              <div class="circle"></div>
+              <div class="circle" id="right"></div>
+              <div class="circle" id="bottom"></div>
+            </div>
+            <div class="front-content">
+              <small class="badge">Challenge 1</small>
+              <div class="description">
+                <div class="title">
+                  <p class="title">
+                    <strong>Challenge 1</strong>
+                  </p>
+                </div>
+                <p class="card-footer">
+                  Begin your cybersecurity journey with this introductory challenge.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="content">
+          <div class="back">
+            <div class="back-content">
+              <span class="difficulty medium">Medium</span>
+              <a href="#" class="start-btn">START</a>
+            </div>
+          </div>
+          <div class="front">
+            <div class="img">
+              <div class="circle"></div>
+              <div class="circle" id="right"></div>
+              <div class="circle" id="bottom"></div>
+            </div>
+            <div class="front-content">
+              <small class="badge">Challenge 2</small>
+              <div class="description">
+                <div class="title">
+                  <p class="title">
+                    <strong>Challenge 2</strong>
+                  </p>
+                </div>
+                <p class="card-footer">
+                  Test your skills with this intermediate-level challenge.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="content">
+          <div class="back">
+            <div class="back-content">
+              <span class="difficulty hard">Hard</span>
+              <a href="#" class="start-btn">START</a>
+            </div>
+          </div>
+          <div class="front">
+            <div class="img">
+              <div class="circle"></div>
+              <div class="circle" id="right"></div>
+              <div class="circle" id="bottom"></div>
+            </div>
+            <div class="front-content">
+              <small class="badge">Challenge 3</small>
+              <div class="description">
+                <div class="title">
+                  <p class="title">
+                    <strong>Challenge 3</strong>
+                  </p>
+                </div>
+                <p class="card-footer">
+                  Push your limits with this advanced cybersecurity challenge.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="content">
+          <div class="back">
+            <div class="back-content">
+              <span class="difficulty easy">Easy</span>
+              <a href="#" class="start-btn">START</a>
+            </div>
+          </div>
+          <div class="front">
+            <div class="img">
+              <div class="circle"></div>
+              <div class="circle" id="right"></div>
+              <div class="circle" id="bottom"></div>
+            </div>
+            <div class="front-content">
+              <small class="badge">Challenge 4</small>
+              <div class="description">
+                <div class="title">
+                  <p class="title">
+                    <strong>Challenge 4</strong>
+                  </p>
+                </div>
+                <p class="card-footer">
+                  Another beginner-friendly challenge to build your foundation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="content">
+          <div class="back">
+            <div class="back-content">
+              <span class="difficulty medium">Medium</span>
+              <a href="#" class="start-btn">START</a>
+            </div>
+          </div>
+          <div class="front">
+            <div class="img">
+              <div class="circle"></div>
+              <div class="circle" id="right"></div>
+              <div class="circle" id="bottom"></div>
+            </div>
+            <div class="front-content">
+              <small class="badge">Challenge 5</small>
+              <div class="description">
+                <div class="title">
+                  <p class="title">
+                    <strong>Challenge 5</strong>
+                  </p>
+                </div>
+                <p class="card-footer">
+                  Dive deeper into cybersecurity concepts with this challenge.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="content">
+          <div class="back">
+            <div class="back-content">
+              <span class="difficulty hard">Hard</span>
+              <a href="#" class="start-btn">START</a>
+            </div>
+          </div>
+          <div class="front">
+            <div class="img">
+              <div class="circle"></div>
+              <div class="circle" id="right"></div>
+              <div class="circle" id="bottom"></div>
+            </div>
+            <div class="front-content">
+              <small class="badge">Challenge 6</small>
+              <div class="description">
+                <div class="title">
+                  <p class="title">
+                    <strong>Challenge 6</strong>
+                  </p>
+                </div>
+                <p class="card-footer">
+                  Test your expertise with this complex security scenario.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="scripts/main.js"></script>
+  </div>
+</body>
+</html>
