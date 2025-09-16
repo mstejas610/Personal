@@ -21,7 +21,7 @@ docker build -t sudo-chroot .
 2. **Run the container with SSH exposed**
 
 ```bash
-docker run --rm -d --name sudo-chroot -p {port}:22 sudo-chroot
+docker run -d -p {port}:22 sudo-chroot
 ```
 
 3. **Connect via SSH**
