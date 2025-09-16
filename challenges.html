@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenges - CyTutor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/challenges.css">
+</head>
+<body>
+  <!-- Grid Background -->
+  <div class="cyber-grid"></div>
+
+  <!-- Side Navigation -->
+  <nav class="side-nav">
+    <a href="/" class="logo">CyTutor</a>
+    
+    <div class="nav-section">
+      <h3>Categories</h3>
+      <a href="#" class="nav-item active">Cyber Range</a>
+      <a href="#" class="nav-item">Cloud Security</a>
+      <a href="#" class="nav-item">IoT Security</a>
+    </div>
+
+    <div class="nav-section">
+      <h3>Difficulty</h3>
+      <a href="#" class="nav-item">Easy</a>
+      <a href="#" class="nav-item">Medium</a>
+      <a href="#" class="nav-item">Hard</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <h1 class="section-title">Challenges</h1>
+    
+    <div class="challenges-grid">
+      <!-- Challenge 1 -->
+      <div class="challenge-card">
+        <h3>Challenge 1</h3>
+        <span class="difficulty easy">Easy</span>
+        <p>Begin your cybersecurity journey with this introductory challenge.</p>
+        <a href="#" class="start-btn">START</a>
+      </div>
+
+      <!-- Challenge 2 -->
+      <div class="challenge-card">
+        <h3>Challenge 2</h3>
+        <span class="difficulty medium">Medium</span>
+        <p>Test your skills with this intermediate-level challenge.</p>
+        <a href="#" class="start-btn">START</a>
+      </div>
+
+      <!-- Challenge 3 -->
+      <div class="challenge-card">
+        <h3>Challenge 3</h3>
+        <span class="difficulty hard">Hard</span>
+        <p>Push your limits with this advanced cybersecurity challenge.</p>
+        <a href="#" class="start-btn">START</a>
+      </div>
+
+      <!-- Challenge 4 -->
+      <div class="challenge-card">
+        <h3>Challenge 4</h3>
+        <span class="difficulty easy">Easy</span>
+        <p>Another beginner-friendly challenge to build your foundation.</p>
+        <a href="#" class="start-btn">START</a>
+      </div>
+
+      <!-- Challenge 5 -->
+      <div class="challenge-card">
+        <h3>Challenge 5</h3>
+        <span class="difficulty medium">Medium</span>
+        <p>Dive deeper into cybersecurity concepts with this challenge.</p>
+        <a href="#" class="start-btn">START</a>
+      </div>
+
+      <!-- Challenge 6 -->
+      <div class="challenge-card">
+        <h3>Challenge 6</h3>
+        <span class="difficulty hard">Hard</span>
+        <p>Test your expertise with this complex security scenario.</p>
+        <a href="#" class="start-btn">START</a>
+      </div>
+    </div>
+  </main>
+      position: relative;
+      width: 100%;
+      height: 280px;
+      transition: 200ms;
+      perspective: 800px;
+    }
+
+    .challenge-card .canvas {
+      perspective: 800px;
+      inset: 0;
+      z-index: 200;
+      position: absolute;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+      gap: 0px 0px;
+      grid-template-areas: 
+        "tr-1 tr-2 tr-3 tr-4 tr-5"
+        "tr-6 tr-7 tr-8 tr-9 tr-10"
+        "tr-11 tr-12 tr-13 tr-14 tr-15"
+        "tr-16 tr-17 tr-18 tr-19 tr-20"
+        "tr-21 tr-22 tr-23 tr-24 tr-25";
+    }
+
+    .challenge-card .tracker {
+      position: absolute;
+      z-index: 200;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .challenge-card .card-content {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      border-radius: 20px;
+      transition: 700ms;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+
+    .challenge-card .card-content::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(43deg, var(--primary) 0%, var(--secondary) 46%, var(--cta) 100%);
+      opacity: 0.1;
+      transition: opacity 0.3s ease;
+    }
+
+    .challenge-card:hover .card-content::before {
+      opacity: 0.2;
+    }
+
+    .challenge-card .card-content::after {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      background: linear-gradient(43deg, var(--primary) 0%, var(--secondary) 46%, var(--cta) 100%);
+      filter: blur(2rem);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    .challenge-card:hover .card-content::after {
+      opacity: 0.1;
+    }
+
+    .challenge-card .tracker:hover ~ .card-content {
+      filter: brightness(1.1);
+    }
+
+    /* Card 3D effect on hover */
+    .tr-1:hover ~ .card-content { transform: rotateX(20deg) rotateY(-10deg) rotateZ(0deg); }
+    .tr-2:hover ~ .card-content { transform: rotateX(20deg) rotateY(-5deg) rotateZ(0deg); }
+    .tr-3:hover ~ .card-content { transform: rotateX(20deg) rotateY(0deg) rotateZ(0deg); }
+    .tr-4:hover ~ .card-content { transform: rotateX(20deg) rotateY(5deg) rotateZ(0deg); }
+    .tr-5:hover ~ .card-content { transform: rotateX(20deg) rotateY(10deg) rotateZ(0deg); }
+    .tr-6:hover ~ .card-content { transform: rotateX(10deg) rotateY(-10deg) rotateZ(0deg); }
+    .tr-7:hover ~ .card-content { transform: rotateX(10deg) rotateY(-5deg) rotateZ(0deg); }
+    .tr-8:hover ~ .card-content { transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg); }
+    .tr-9:hover ~ .card-content { transform: rotateX(10deg) rotateY(5deg) rotateZ(0deg); }
+    .tr-10:hover ~ .card-content { transform: rotateX(10deg) rotateY(10deg) rotateZ(0deg); }
+    .tr-11:hover ~ .card-content { transform: rotateX(0deg) rotateY(-10deg) rotateZ(0deg); }
+    .tr-12:hover ~ .card-content { transform: rotateX(0deg) rotateY(-5deg) rotateZ(0deg); }
+    .tr-13:hover ~ .card-content { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    .tr-14:hover ~ .card-content { transform: rotateX(0deg) rotateY(5deg) rotateZ(0deg); }
+    .tr-15:hover ~ .card-content { transform: rotateX(0deg) rotateY(10deg) rotateZ(0deg); }
+    .tr-16:hover ~ .card-content { transform: rotateX(-10deg) rotateY(-10deg) rotateZ(0deg); }
+    .tr-17:hover ~ .card-content { transform: rotateX(-10deg) rotateY(-5deg) rotateZ(0deg); }
+    .tr-18:hover ~ .card-content { transform: rotateX(-10deg) rotateY(0deg) rotateZ(0deg); }
+    .tr-19:hover ~ .card-content { transform: rotateX(-10deg) rotateY(5deg) rotateZ(0deg); }
+    .tr-20:hover ~ .card-content { transform: rotateX(-10deg) rotateY(10deg) rotateZ(0deg); }
+    .tr-21:hover ~ .card-content { transform: rotateX(-20deg) rotateY(-10deg) rotateZ(0deg); }
+    .tr-22:hover ~ .card-content { transform: rotateX(-20deg) rotateY(-5deg) rotateZ(0deg); }
+    .tr-23:hover ~ .card-content { transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg); }
+    .tr-24:hover ~ .card-content { transform: rotateX(-20deg) rotateY(5deg) rotateZ(0deg); }
+    .tr-25:hover ~ .card-content { transform: rotateX(-20deg) rotateY(10deg) rotateZ(0deg); }
+
+    .challenge-difficulty {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .difficulty-easy {
+      background: rgba(46, 160, 67, 0.1);
+      color: var(--success);
+    }
+
+    .difficulty-medium {
+      background: rgba(245, 158, 11, 0.1);
+      color: var(--cta);
+    }
+
+    .difficulty-hard {
+      background: rgba(248, 81, 73, 0.1);
+      color: var(--error);
+    }
+
+    .challenge-title {
+      color: var(--text);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      transform: translateY(0);
+      transition: transform 0.3s ease;
+    }
+
+    .challenge-description {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .challenge-meta {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .challenge-card:hover .challenge-title {
+      transform: translateY(-2px);
+    }
+
+    .challenge-card:hover .challenge-description {
+      opacity: 1;
+    }
+
+    .challenge-card .card-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .challenge-difficulty {
+      align-self: flex-start;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .challenge-card:hover .challenge-difficulty {
+      transform: translateY(-2px) scale(1.05);
+    }
+
+    .challenge-category {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      transition: color 0.3s ease;
+    }
+
+    .challenge-card:hover .challenge-category {
+      color: var(--primary);
+    }
+
+    .challenge-points {
+      color: var(--secondary);
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: all 0.3s ease;
+    }
+
+    .challenge-card:hover .challenge-points {
+      color: var(--cta);
+      transform: scale(1.1);
+    }
+
+    .challenge-category {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .challenge-points {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+
+    .filters {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-button {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-button:hover,
+    .filter-button.active {
+      background: var(--primary);
+      color: var(--bg-dark);
+      border-color: var(--primary);
+    }
+
+    .page-header {
+      padding: 4rem 0 2rem;
+      text-align: center;
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--text) 0%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .page-description {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .search-bar {
+      margin: 2rem 0;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      padding-left: 3rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="particles-bg"></canvas>
+
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1>CyTutor</h1>
+        <div class="logo-glow"></div>
+      </div>
+      <nav>
+        <a href="cytutor_redesign.html">Home</a>
+        <a href="challenges.html" class="active">Challenges</a>
+        <a href="domains.html">Learn</a>
+        <a href="#leaderboard">Leaderboard</a>
+        <a href="#about">About</a>
+        <a href="Login.html" class="cta-button">Login / Sign Up</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <h1 class="page-title">Cybersecurity Challenges</h1>
+        <p class="page-description">Test your skills with real-world scenarios. From web exploitation to cryptography, we've got challenges for every skill level.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search challenges...">
+        <span class="search-icon">🔍</span>
+      </div>
+
+      <div class="filters">
+        <button class="filter-button active">All</button>
+        <button class="filter-button">Web Security</button>
+        <button class="filter-button">Cryptography</button>
+        <button class="filter-button">Reverse Engineering</button>
+        <button class="filter-button">Forensics</button>
+        <button class="filter-button">Network Security</button>
+      </div>
+
+      <div class="challenges-grid">
+        <div class="challenge-card noselect">
+          <div class="canvas">
+            <div class="tracker tr-1"></div>
+            <div class="tracker tr-2"></div>
+            <div class="tracker tr-3"></div>
+            <div class="tracker tr-4"></div>
+            <div class="tracker tr-5"></div>
+            <div class="tracker tr-6"></div>
+            <div class="tracker tr-7"></div>
+            <div class="tracker tr-8"></div>
+            <div class="tracker tr-9"></div>
+            <div class="tracker tr-10"></div>
+            <div class="tracker tr-11"></div>
+            <div class="tracker tr-12"></div>
+            <div class="tracker tr-13"></div>
+            <div class="tracker tr-14"></div>
+            <div class="tracker tr-15"></div>
+            <div class="tracker tr-16"></div>
+            <div class="tracker tr-17"></div>
+            <div class="tracker tr-18"></div>
+            <div class="tracker tr-19"></div>
+            <div class="tracker tr-20"></div>
+            <div class="tracker tr-21"></div>
+            <div class="tracker tr-22"></div>
+            <div class="tracker tr-23"></div>
+            <div class="tracker tr-24"></div>
+            <div class="tracker tr-25"></div>
+            <div class="card-content">
+              <span class="challenge-difficulty difficulty-easy">Easy</span>
+              <h3 class="challenge-title">SQL Injection Basics</h3>
+              <p class="challenge-description">Learn the fundamentals of SQL injection attacks and how to prevent them in web applications.</p>
+              <div class="challenge-meta">
+                <span class="challenge-category">🌐 Web Security</span>
+                <span class="challenge-points">100 XP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="challenge-card noselect">
+          <div class="canvas">
+            <div class="tracker tr-1"></div>
+            <div class="tracker tr-2"></div>
+            <div class="tracker tr-3"></div>
+            <div class="tracker tr-4"></div>
+            <div class="tracker tr-5"></div>
+            <div class="tracker tr-6"></div>
+            <div class="tracker tr-7"></div>
+            <div class="tracker tr-8"></div>
+            <div class="tracker tr-9"></div>
+            <div class="tracker tr-10"></div>
+            <div class="tracker tr-11"></div>
+            <div class="tracker tr-12"></div>
+            <div class="tracker tr-13"></div>
+            <div class="tracker tr-14"></div>
+            <div class="tracker tr-15"></div>
+            <div class="tracker tr-16"></div>
+            <div class="tracker tr-17"></div>
+            <div class="tracker tr-18"></div>
+            <div class="tracker tr-19"></div>
+            <div class="tracker tr-20"></div>
+            <div class="tracker tr-21"></div>
+            <div class="tracker tr-22"></div>
+            <div class="tracker tr-23"></div>
+            <div class="tracker tr-24"></div>
+            <div class="tracker tr-25"></div>
+            <div class="card-content">
+              <span class="challenge-difficulty difficulty-medium">Medium</span>
+              <h3 class="challenge-title">Password Hash Cracking</h3>
+              <p class="challenge-description">Practice various techniques to crack password hashes using common tools and wordlists.</p>
+              <div class="challenge-meta">
+                <span class="challenge-category">🔐 Cryptography</span>
+                <span class="challenge-points">250 XP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="challenge-card noselect">
+          <div class="canvas">
+            <div class="tracker tr-1"></div>
+            <div class="tracker tr-2"></div>
+            <div class="tracker tr-3"></div>
+            <div class="tracker tr-4"></div>
+            <div class="tracker tr-5"></div>
+            <div class="tracker tr-6"></div>
+            <div class="tracker tr-7"></div>
+            <div class="tracker tr-8"></div>
+            <div class="tracker tr-9"></div>
+            <div class="tracker tr-10"></div>
+            <div class="tracker tr-11"></div>
+            <div class="tracker tr-12"></div>
+            <div class="tracker tr-13"></div>
+            <div class="tracker tr-14"></div>
+            <div class="tracker tr-15"></div>
+            <div class="tracker tr-16"></div>
+            <div class="tracker tr-17"></div>
+            <div class="tracker tr-18"></div>
+            <div class="tracker tr-19"></div>
+            <div class="tracker tr-20"></div>
+            <div class="tracker tr-21"></div>
+            <div class="tracker tr-22"></div>
+            <div class="tracker tr-23"></div>
+            <div class="tracker tr-24"></div>
+            <div class="tracker tr-25"></div>
+            <div class="card-content">
+              <span class="challenge-difficulty difficulty-hard">Hard</span>
+              <h3 class="challenge-title">Advanced Buffer Overflow</h3>
+              <p class="challenge-description">Exploit buffer overflow vulnerabilities in a complex binary with modern protections.</p>
+              <div class="challenge-meta">
+                <span class="challenge-category">⚡ Reverse Engineering</span>
+                <span class="challenge-points">500 XP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="challenge-card noselect">
+          <div class="canvas">
+            <div class="tracker tr-1"></div>
+            <div class="tracker tr-2"></div>
+            <div class="tracker tr-3"></div>
+            <div class="tracker tr-4"></div>
+            <div class="tracker tr-5"></div>
+            <div class="tracker tr-6"></div>
+            <div class="tracker tr-7"></div>
+            <div class="tracker tr-8"></div>
+            <div class="tracker tr-9"></div>
+            <div class="tracker tr-10"></div>
+            <div class="tracker tr-11"></div>
+            <div class="tracker tr-12"></div>
+            <div class="tracker tr-13"></div>
+            <div class="tracker tr-14"></div>
+            <div class="tracker tr-15"></div>
+            <div class="tracker tr-16"></div>
+            <div class="tracker tr-17"></div>
+            <div class="tracker tr-18"></div>
+            <div class="tracker tr-19"></div>
+            <div class="tracker tr-20"></div>
+            <div class="tracker tr-21"></div>
+            <div class="tracker tr-22"></div>
+            <div class="tracker tr-23"></div>
+            <div class="tracker tr-24"></div>
+            <div class="tracker tr-25"></div>
+            <div class="card-content">
+              <span class="challenge-difficulty difficulty-medium">Medium</span>
+              <h3 class="challenge-title">Network Traffic Analysis</h3>
+              <p class="challenge-description">Analyze network packet captures to identify and investigate security incidents.</p>
+              <div class="challenge-meta">
+                <span class="challenge-category">🔍 Forensics</span>
+                <span class="challenge-points">300 XP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="challenge-card noselect">
+          <div class="canvas">
+            <div class="tracker tr-1"></div>
+            <div class="tracker tr-2"></div>
+            <div class="tracker tr-3"></div>
+            <div class="tracker tr-4"></div>
+            <div class="tracker tr-5"></div>
+            <div class="tracker tr-6"></div>
+            <div class="tracker tr-7"></div>
+            <div class="tracker tr-8"></div>
+            <div class="tracker tr-9"></div>
+            <div class="tracker tr-10"></div>
+            <div class="tracker tr-11"></div>
+            <div class="tracker tr-12"></div>
+            <div class="tracker tr-13"></div>
+            <div class="tracker tr-14"></div>
+            <div class="tracker tr-15"></div>
+            <div class="tracker tr-16"></div>
+            <div class="tracker tr-17"></div>
+            <div class="tracker tr-18"></div>
+            <div class="tracker tr-19"></div>
+            <div class="tracker tr-20"></div>
+            <div class="tracker tr-21"></div>
+            <div class="tracker tr-22"></div>
+            <div class="tracker tr-23"></div>
+            <div class="tracker tr-24"></div>
+            <div class="tracker tr-25"></div>
+            <div class="card-content">
+              <span class="challenge-difficulty difficulty-easy">Easy</span>
+              <h3 class="challenge-title">XSS Challenge</h3>
+              <p class="challenge-description">Discover and exploit cross-site scripting vulnerabilities in a web application.</p>
+              <div class="challenge-meta">
+                <span class="challenge-category">🌐 Web Security</span>
+                <span class="challenge-points">150 XP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="challenge-card noselect">
+          <div class="canvas">
+            <div class="tracker tr-1"></div>
+            <div class="tracker tr-2"></div>
+            <div class="tracker tr-3"></div>
+            <div class="tracker tr-4"></div>
+            <div class="tracker tr-5"></div>
+            <div class="tracker tr-6"></div>
+            <div class="tracker tr-7"></div>
+            <div class="tracker tr-8"></div>
+            <div class="tracker tr-9"></div>
+            <div class="tracker tr-10"></div>
+            <div class="tracker tr-11"></div>
+            <div class="tracker tr-12"></div>
+            <div class="tracker tr-13"></div>
+            <div class="tracker tr-14"></div>
+            <div class="tracker tr-15"></div>
+            <div class="tracker tr-16"></div>
+            <div class="tracker tr-17"></div>
+            <div class="tracker tr-18"></div>
+            <div class="tracker tr-19"></div>
+            <div class="tracker tr-20"></div>
+            <div class="tracker tr-21"></div>
+            <div class="tracker tr-22"></div>
+            <div class="tracker tr-23"></div>
+            <div class="tracker tr-24"></div>
+            <div class="tracker tr-25"></div>
+            <div class="card-content">
+              <span class="challenge-difficulty difficulty-hard">Hard</span>
+              <h3 class="challenge-title">Firmware Analysis</h3>
+              <p class="challenge-description">Extract and analyze IoT device firmware to find security vulnerabilities.</p>
+              <div class="challenge-meta">
+                <span class="challenge-category">⚡ Reverse Engineering</span>
+                <span class="challenge-points">450 XP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2025 CyTutor · Built for learners, by learners
+    </div>
+  </footer>
+
+  <script>
+    // Add hover effect to challenge cards
+    document.querySelectorAll('.challenge-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const angleX = (y - centerY) / 20;
+        const angleY = (centerX - x) / 20;
+        
+        card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+      });
+    });
+  </script>
+
+  <script>
+    // Particle background animation (same as main page)
+    const canvas = document.getElementById('particles-bg');
+    const ctx = canvas.getContext('2d');
+    const particles = [];
+    const particleCount = 100;
+
+    function setCanvasSize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    setCanvasSize();
+    window.addEventListener('resize', setCanvasSize);
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = Math.random() * 0.5 - 0.25;
+        this.vy = Math.random() * 0.5 - 0.25;
+        this.size = Math.random() * 2;
+        this.color = Math.random() < 0.5 ? '#58A6FF' : '#6E40C9';
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if (this.x < 0) this.x = canvas.width;
+        if (this.x > canvas.width) this.x = 0;
+        if (this.y < 0) this.y = canvas.height;
+        if (this.y > canvas.height) this.y = 0;
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+
+      particles.forEach((p1, i) => {
+        particles.slice(i + 1).forEach(p2 => {
+          const dx = p1.x - p2.x;
+          const dy = p1.y - p2.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 150) {
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `rgba(88, 166, 255, ${0.1 * (1 - distance/150)})`;
+            ctx.stroke();
+          }
+        });
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    // Filter functionality
+    const filterButtons = document.querySelectorAll('.filter-button');
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        // Add actual filtering logic here
+      });
+    });
+
+    // Search functionality
+    const searchInput = document.querySelector('.search-input');
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      // Add actual search logic here
+    });
+  </script>
+</body>
+</html>
